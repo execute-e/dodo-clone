@@ -21,7 +21,7 @@ const Header: React.FC = () => {
       </Link>
       </div>
 
-      <Link to="cart"><span className='bg-orange-400 text-white p-2 rounded-md hover:opacity-70 transition-opacity'>123</span></Link>
+      <Link to="cart"><span className='bg-orange-400 text-white p-2 rounded-md hover:opacity-70 transition-opacity'>0 руб.</span></Link>
     </header>
   );
 };

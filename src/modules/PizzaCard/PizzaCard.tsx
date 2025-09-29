@@ -1,10 +1,10 @@
 import React from 'react';
-import type { PizzaDto } from '../Home/api';
+import type { PizzaDto } from '../PizzasList/api';
 
 const PizzaCard: React.FC<{ data: PizzaDto }> = ({ data }) => {
   return (
     <article className="flex flex-col justify-between">
-      <div className='flex flex-col'>
+      <div className="flex flex-col">
         <img
           src={`/pizzas/${data.imgName}`}
           alt=""
@@ -21,7 +21,9 @@ const PizzaCard: React.FC<{ data: PizzaDto }> = ({ data }) => {
       </div>
       <div className="flex mt-5 justify-between items-center">
         <h3 className="font-bold text-sm md:text-md lg:text-xl xl:text-2xl">{data.price}₽</h3>
-        <button className='cursor-pointer font-semibold text-orange-800 bg-orange-200 hover:bg-orange-300 transition-colors p-2 rounded-2xl active:bg-orange-500'>Выбрать</button>
+        <button className="cursor-pointer font-semibold text-orange-800 bg-orange-200 hover:bg-orange-300 transition-colors p-2 rounded-2xl active:bg-orange-500">
+          Выбрать
+        </button>
       </div>
     </article>
   );

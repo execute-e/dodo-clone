@@ -1,5 +1,5 @@
 import { jsonApiInstance } from '@/shared/api/apiInstance';
-import { queryOptions } from '@tanstack/react-query';
+import { keepPreviousData, queryOptions } from '@tanstack/react-query';
 
 export type PaginatedResult<T> = {
   data: T[];
@@ -26,6 +26,7 @@ export const PizzasApi = {
       queryKey: [PizzasApi.baseKey, page],
       queryFn: (meta) =>
         jsonApiInstance<PaginatedResult<PizzaDto>>(`pizzas?_page=${page}&_per_page=4`, { signal: meta.signal }),
+      placeholderData: keepPreviousData,
     });
   },
 };

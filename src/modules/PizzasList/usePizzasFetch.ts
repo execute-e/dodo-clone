@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { PizzasApi } from './api';
 
 export function usePizzasFetch(page: number) {
-  const { data, error, isLoading } = useQuery({
+  const { data, error, isLoading, isPlaceholderData } = useQuery({
     ...PizzasApi.getPizzasOptions(page),
   });
 
@@ -10,5 +10,6 @@ export function usePizzasFetch(page: number) {
     pizzas: data,
     error,
     isLoading,
+    isPlaceholderData
   };
 }

@@ -5,8 +5,9 @@ export function useSearchPizzas(searchQuery: string) {
     const {
         data,
         error,
-        isLoading
-    } = useQuery({...searchPizzasApi.getSearchPizzasOptions(searchQuery)})
+        isLoading,
+        isPlaceholderData,
+    } = useQuery({...searchPizzasApi.getSearchPizzasOptions(searchQuery)});
 
-    return {data, error, isLoading}
+    return {data, error, isLoading, isPlaceholderData}
 }
