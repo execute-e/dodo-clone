@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
-import { cartPizzasApi } from "./api"
+import { pizzasApi } from "./api"
 
-export const useCartFetch = () => {
+export const usePizzasList = () => {
     const {
         data, error
     } = useQuery({
-        ...cartPizzasApi.getCartPizzasOptions(),
+        ...pizzasApi.getPizzasOptions(),
     });
 
     return {pizzas: data, error};

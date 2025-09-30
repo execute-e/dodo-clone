@@ -13,7 +13,7 @@ const PizzasList: React.FC = () => {
     <div className="flex flex-col gap-y-10 pb-10">
       <div className={`grid gap-4 grid-cols-2 sm:grid-cols-4 transition-opacity ${isPlaceholderData ? "opacity-50" : ""}`}>
         {pizzas?.data.map((item) => (
-          <PizzaCard data={item} />
+          <PizzaCard key={item.id} data={item} />
         ))}
       </div>
       <div className="flex justify-center gap-x-2">

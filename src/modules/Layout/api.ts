@@ -2,11 +2,11 @@ import { jsonApiInstance } from '@/shared/api/apiInstance';
 import { queryOptions } from '@tanstack/react-query';
 import type { PizzaDto } from '../PizzasList/api';
 
-export const cartPizzasApi = {
+export const pizzasApi = {
   baseKey: 'cartPizzas',
-  getCartPizzasOptions: () => {
+  getPizzasOptions: () => {
     return queryOptions({
-      queryKey: [cartPizzasApi.baseKey, 'list'],
+      queryKey: [pizzasApi.baseKey, 'list'],
       queryFn: (meta) => jsonApiInstance<PizzaDto[]>(`pizzas`, { signal: meta.signal }),
     });
   },

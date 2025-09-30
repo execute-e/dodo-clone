@@ -3,9 +3,11 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 type PizzaId = string;
 
 export type InitialCartStateType = {
-    pizzas: {
-        [pizzaId: PizzaId]: number
-    }
+    pizzas: pizzasCartStateType;
+}
+
+export type pizzasCartStateType = {
+    [pizzaId: PizzaId]: number
 }
 
 const initialCartState: InitialCartStateType = {
