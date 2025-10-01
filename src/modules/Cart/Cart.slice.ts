@@ -11,29 +11,30 @@ export type pizzasCartStateType = {
 }
 
 const initialCartState: InitialCartStateType = {
-    pizzas: {
-        '1': 2,
-        '2': 3,
-    },
+    pizzas: {},
 }
 
 export const cartSlice = createSlice({
     name: 'cart',
     initialState: initialCartState,
     selectors: {
-        selectPizzasInCart: (state) => state.pizzas
+        selectPizzasInCart: (state) => state.pizzas,
     },
     reducers: {
-        addPizza: (state, action: PayloadAction<{ pizzaId: PizzaId }>) => {
-            const { pizzaId } = action.payload;
+        addPizza: (state, action: PayloadAction<PizzaId>) => {
+            const pizzaId = action.payload;
             const currentPizzaCount = state.pizzas[pizzaId] ?? 0;
 
             state.pizzas[pizzaId] = currentPizzaCount + 1;
         },
-        removePizza: (state, action: PayloadAction<{ pizzaId: PizzaId }>) => {
-            const { pizzaId } = action.payload;
+        removePizza: (state, action: PayloadAction<PizzaId>) => {
+            const pizzaId = action.payload;
             const currentPizzaCount = state.pizzas[pizzaId];
 
+            if (currentPizzaCount <= 1) {
+                delete state.pizzas[pizzaId];
+                return;
+            }
             state.pizzas[pizzaId] = currentPizzaCount - 1;
         },
         removeAllPizzas: (state) => {

@@ -1,15 +1,17 @@
-import type { pizzasCartStateType } from '../Layout/Cart.slice';
+import { useAppSelector } from '@/store';
+import { cartSlice } from './Cart.slice';
 import type { PizzaDto } from '../PizzasList/api';
 
 const Cart = ({
   pizzas,
-  cart,
   err,
 }: {
   pizzas: PizzaDto[] | undefined;
-  cart: pizzasCartStateType;
   err: Error | null;
 }) => {
+
+  const cart = useAppSelector((state) => cartSlice.selectors.selectPizzasInCart(state));
+
   if (err) return <div>error: {err.message}</div>;
 
   return (
