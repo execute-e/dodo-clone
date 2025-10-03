@@ -7,7 +7,7 @@ const AddButton = ({ countInCart, pizzaId }: { countInCart: number; pizzaId: str
   return (
     <>
       {countInCart ? (
-        <div className="flex justify-between items-center w-[100%] h-[45px] border-2 border-orange-400 font-semibold p-2 rounded-2xl">
+        <div className="flex justify-between gap-x-4 items-center w-[100%] h-[45px] border-2 border-orange-400 font-semibold p-2 rounded-2xl">
           <button
             className="font-bold text-xl flex cursor-pointer hover:text-orange-600 transition-colors"
             onClick={() => {

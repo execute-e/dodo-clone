@@ -37,7 +37,7 @@ const Search: React.FC = () => {
         </button>
         {isSearchOpened && (
           <div
-            className={`absolute left-0 right-0 bottom-0 translate-y-10/10 bg-white max-h-[100px] overflow-y-auto border-2 border-orange-500 border-t-0`}>
+            className={`absolute left-0 right-0 bottom-0 translate-y-10/10 bg-white max-h-[100px] overflow-y-auto border-2 border-orange-500 border-t-0 [scrollbar-width:thin]`}>
             <div className={`transition-opacity ${isPlaceholderData ? 'opacity-50' : ''}`}>
               {data?.map((item) => (
                 <SearchResultItem key={item.id} data={item} countInCart={cart[item.id]} />
