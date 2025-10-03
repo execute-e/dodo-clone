@@ -1,5 +1,4 @@
 import React from 'react';
-import './icons/fontello.css';
 import PizzasList from '../PizzasList/PizzasList';
 import Search from '../Search/Search';
 
